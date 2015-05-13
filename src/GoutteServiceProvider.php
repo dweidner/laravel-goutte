@@ -1,4 +1,4 @@
-<?php namespace Weidner\Goutte\Providers;
+<?php namespace Weidner\Goutte;
 
 use Weidner\Goutte\Goutte;
 use Illuminate\Support\ServiceProvider;
@@ -10,7 +10,7 @@ class GoutteServiceProvider extends ServiceProvider {
    *
    * @var bool
    */
-  protected $defer = false;
+  protected $defer = true;
 
   /**
    * Bootstrap the application events.
@@ -29,11 +29,24 @@ class GoutteServiceProvider extends ServiceProvider {
    */
   public function register()
   {
-    $this->app['goutte'] = $this->app->share(function($app)
+    $this->registerGoutte();
+
+    $this->app->alias('goutte', 'Goutte\Client');
+  }
+
+  /**
+   * Register the Goutte instance.
+   *
+   * @return void
+   */
+  protected function registerGoutte()
+  {
+    $this->app->bindShared('goutte', function($app)
     {
-      return new Goutte();
+      return new \Goutte\Client();
     });
   }
+
 
   /**
    * Get the services provided by the provider.
@@ -42,9 +55,7 @@ class GoutteServiceProvider extends ServiceProvider {
    */
   public function provides()
   {
-    return [
-      'goutte'
-    ];
+    return [ 'goutte' ];
   }
 
 }

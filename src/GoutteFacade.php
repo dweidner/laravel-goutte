@@ -1,4 +1,4 @@
-<?php namespace Weidner\Goutte\Facades;
+<?php namespace Weidner\Goutte;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -12,9 +12,6 @@ class GoutteFacade extends Facade {
    *
    * @return string
    */
-  protected static function getFacadeAccessor()
-  {
-    return 'goutte';
-  }
+  protected static function getFacadeAccessor() { return 'goutte'; }
 
 }

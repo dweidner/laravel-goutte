@@ -13,16 +13,6 @@ class GoutteServiceProvider extends ServiceProvider {
   protected $defer = true;
 
   /**
-   * Bootstrap the application events.
-   *
-   * @return void
-   */
-  public function boot()
-  {
-    $this->package('weidner/goutte');
-  }
-
-  /**
    * Register the service provider.
    *
    * @return void

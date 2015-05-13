@@ -1,0 +1,23 @@
+{
+    "name": "weidner/goutte",
+    "description": "Laravel 5 package for Gouette, a simple PHP Web Scraper",
+    "license": "MIT",
+    "keywords": ["goutte", "laravel"],
+    "authors": [
+        {
+            "name": "Daniel Weidner",
+            "email": "hallo@danielweidner.de"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.0.*",
+        "fabpot/goutte": "2.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Weidner\\Goutte": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}

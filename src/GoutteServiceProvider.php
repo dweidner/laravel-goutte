@@ -1,6 +1,6 @@
-<?php namespace Weidner\Goutte;
+<?php namespace repat\Goutte;
 
-use Weidner\Goutte\Goutte;
+use repat\Goutte\Goutte;
 use Illuminate\Support\ServiceProvider;
 
 class GoutteServiceProvider extends ServiceProvider {

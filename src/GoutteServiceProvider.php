@@ -31,7 +31,7 @@ class GoutteServiceProvider extends ServiceProvider {
    */
   protected function registerGoutte()
   {
-    $this->app->bindShared('goutte', function($app)
+    $this->app->singleton('goutte', function($app)
     {
       return new \Goutte\Client();
     });

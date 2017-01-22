@@ -8,7 +8,7 @@ In your terminal application move to the root directory of your laravel project 
 
 ```sh
 $ cd ~/Sites/laravel-example-project
-$ composer require weidner/goutte:@dev
+$ composer require weidner/goutte
 ```
 
 This will add the following lines to your `composer.json` and download the project and its dependencies to your projects `./vendor` directory:
@@ -24,7 +24,7 @@ This will add the following lines to your `composer.json` and download the proje
   "require": {
     "php": ">=5.5.9",
     "laravel/framework": "5.2.*",
-    "weidner/goutte": "@dev",
+    "weidner/goutte": "1.0.*",
     // ...
   },
 

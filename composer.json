@@ -24,6 +24,14 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Weidner\\Goutte\\GoutteServiceProvider"
+            ],  
+            "aliases": {
+                "Goutte": "Weidner\\Goutte\\GoutteFacade"
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 # Laravel 5 Facade for Goutte
 
-This repository implements a simple [ServiceProvider](https://laravel.com/docs/master/providers) that makes a singleton instance of the Goutte client easily accessible via a [Facade](https://laravel.com/docs/master/facades) in [Laravel 5](http://laravel.com). See [@FriendsOfPHP/Goutte](https://github.com/FriendsOfPHP/Goutte) for more information about the php web scraper and its interfaces.
+This repository implements a simple [ServiceProvider](https://laravel.com/docs/master/providers) that makes a singleton instance of the Goutte client easily accessible via a [Facade](https://laravel.com/docs/master/facades) in [Laravel 5](http://laravel.com). See [@FriendsOfPHP/Goutte](https://github.com/FriendsOfPHP/Goutte) for more information about the PHP web scraper and its interfaces.
 
 ## Installation using [Composer](https://getcomposer.org/)
 
@@ -35,7 +35,7 @@ This will add the following lines to your `composer.json` and download the proje
 
 ## Usage
 
-In ordet to use the static interface we first have to customize the application configuration to tell the system where it can find the new service. Open the file `config/app.php` in the editor of your choice and add the following lines (`[1]`, `[2]`):
+In order to use the static interface we first have to customize the application configuration to tell the system where it can find the new service. Open the file `config/app.php` in the editor of your choice and add the following lines (`[1]`, `[2]`):
 
 ```php
 // config/app.php

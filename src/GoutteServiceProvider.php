@@ -35,7 +35,13 @@ class GoutteServiceProvider extends ServiceProvider
     protected function registerGoutte()
     {
         $this->app->singleton('goutte', function ($app) {
-            return new \Goutte\Client();
+            $goutte = new \Goutte\Client();
+            if (config('goutte.http_proxy')) {
+                $client = new \GuzzleHttp\Client(['proxy' => config('goutte.http_proxy')]);
+                $goutte->setClient($client);
+            }
+
+            return $goutte;
         });
     }
 

@@ -96,4 +96,16 @@ Route::get('/', function() {
 });
 ```
 
+## Proxy
+
+If you need http proxy, please create a config file `goutte.php` inside config directory
+
+```php
+<?php
+
+return [
+    'http_proxy' => env('HTTP_PROXY'),
+];
+```
+
 *TIP:* If you retrieve a "Class 'Goutte' not found"-Exception try to update the autoloader by running `composer dump-autoload` in your project root.

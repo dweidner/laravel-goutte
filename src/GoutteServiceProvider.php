@@ -3,11 +3,14 @@
 namespace Weidner\Goutte;
 
 use Weidner\Goutte\Goutte;
+use Goutte\Client as GoutteClient;
+use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Support\ServiceProvider;
+use Symfony\Component\BrowserKit\History;
+use Symfony\Component\BrowserKit\CookieJar;
 
 class GoutteServiceProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -16,15 +19,37 @@ class GoutteServiceProvider extends ServiceProvider
     protected $defer = true;
 
     /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__ . '/config/goutte.php' => config_path('goutte.php'),
+        ]);
+    }
+
+    /**
      * Register the service provider.
      *
      * @return void
      */
     public function register()
     {
+        $this->registerConfig();
         $this->registerGoutte();
-
         $this->registerAliases();
+    }
+
+    /**
+     * Register the default configuration.
+     *
+     * @return void
+     */
+    public function registerConfig()
+    {
+        $this->mergeConfigFrom(__DIR__ . '/config/goutte.php', 'goutte');
     }
 
     /**
@@ -34,8 +59,32 @@ class GoutteServiceProvider extends ServiceProvider
      */
     protected function registerGoutte()
     {
+        $this->app->bind(History::class);
+        $this->app->bind(CookieJar::class);
+
+        $this->app->singleton('goutte.client', function ($app) {
+            $config = $app->make('config');
+
+            $client = new GuzzleClient([
+                'base_url' => $config->get('goutte.base_url', null),
+                'defaults' => $config->get('goutte.client', [])
+            ]);
+
+            return $client;
+        });
+
         $this->app->singleton('goutte', function ($app) {
-            return new \Goutte\Client();
+            $config = $app->make('config');
+
+            $goutte = new GoutteClient(
+                $config->get('goutte.server', []),
+                $app->make(History::class),
+                $app->make(CookieJar::class)
+            );
+
+            $goutte->setClient($app->make('goutte.client'));
+
+            return $goutte;
         });
     }
 
@@ -46,7 +95,8 @@ class GoutteServiceProvider extends ServiceProvider
      */
     protected function registerAliases()
     {
-      $this->app->alias('goutte', 'Goutte\Client');
+        $this->app->alias('goutte', GoutteClient::class);
+        $this->app->alias('goutte.client', GuzzleClient::class);
     }
 
     /**
@@ -56,6 +106,9 @@ class GoutteServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [ 'goutte' ];
+        return [
+            'goutte',
+            'goutte.client',
+        ];
     }
 }

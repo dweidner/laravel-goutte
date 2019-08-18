@@ -97,3 +97,26 @@ Route::get('/', function() {
 ```
 
 *TIP:* If you retrieve a "Class 'Goutte' not found"-Exception try to update the autoloader by running `composer dump-autoload` in your project root.
+
+## Configuration
+
+You can customize the default request options to apply to each request of the client. Copy the default configuration to your application directory first:
+
+```sh
+php artisan vendor:publish --provider="Weidner\Goutte\GoutteServiceProvider"
+```
+
+Open the created file in the `config/goutte.php` and customize the configuration options to your liking.
+
+```php
+<?php
+
+return [
+    'client' => [
+        'allow_redirects' => false,
+        'cookies' => true,
+    ],
+];
+```
+
+Have a look into the [Guzzle Documentation](http://docs.guzzlephp.org/en/stable/request-options.html) for a full list of available options.

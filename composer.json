@@ -2,13 +2,17 @@
     "name": "weidner/goutte",
     "description": "Laravel 5 package for Gouette, a simple PHP Web Scraper",
     "license": "MIT",
-    "keywords": ["weidner", "goutte", "laravel"],
+    "keywords": [
+      "weidner",
+      "goutte",
+      "laravel"
+    ],
     "homepage": "https://github.com/dweidner/laravel-goutte",
     "authors": [
         {
             "name": "Daniel Weidner",
             "email": "hallo@danielweidner.de",
-            "homepage": "http://danielweidner.de"
+            "homepage": "https://danielweidner.de"
         }
     ],
     "require": {
@@ -16,10 +20,18 @@
         "illuminate/support": "5.*",
         "fabpot/goutte": "^3.2"
     },
+    "require-dev": {
+        "orchestra/testbench": "^3.8"
+    },
     "autoload": {
         "psr-4": {
             "Weidner\\Goutte\\": "src/"
         }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "Weidner\\Goutte\\": "tests/"
+      }
     },
     "extra": {
         "branch-alias": {
@@ -28,7 +40,7 @@
         "laravel": {
             "providers": [
                 "Weidner\\Goutte\\GoutteServiceProvider"
-            ],  
+            ],
             "aliases": {
                 "Goutte": "Weidner\\Goutte\\GoutteFacade"
             }

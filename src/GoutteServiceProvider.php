@@ -19,15 +19,23 @@ class GoutteServiceProvider extends ServiceProvider
     protected $defer = true;
 
     /**
+     * Get the path of the configuration file shipping with the package.
+     *
+     * @return string
+     */
+    public function getConfigPath()
+    {
+        return dirname(__DIR__) . '/config/goutte.php';
+    }
+
+    /**
      * Bootstrap any application services.
      *
      * @return void
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__ . '/config/goutte.php' => config_path('goutte.php'),
-        ]);
+        $this->publishConfig($this->getConfigPath());
     }
 
     /**
@@ -43,13 +51,25 @@ class GoutteServiceProvider extends ServiceProvider
     }
 
     /**
+     * Register a path to be published by the publish command.
+     *
+     * @param string $path
+     * @param string $group
+     * @return void
+     */
+    protected function publishConfig($path, $group = 'config')
+    {
+        $this->publishes([$path => config_path('goutte.php')], $group);
+    }
+
+    /**
      * Register the default configuration.
      *
      * @return void
      */
-    public function registerConfig()
+    protected function registerConfig()
     {
-        $this->mergeConfigFrom(__DIR__ . '/config/goutte.php', 'goutte');
+        $this->mergeConfigFrom($this->getConfigPath(), 'goutte');
     }
 
     /**

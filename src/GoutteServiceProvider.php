@@ -2,7 +2,6 @@
 
 namespace Weidner\Goutte;
 
-use Weidner\Goutte\Goutte;
 use Goutte\Client as GoutteClient;
 use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Support\ServiceProvider;

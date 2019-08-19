@@ -38,7 +38,7 @@ class GoutteServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerConfig();
-        $this->registerGoutte();
+        $this->registerServices();
         $this->registerAliases();
     }
 
@@ -57,7 +57,7 @@ class GoutteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function registerGoutte()
+    protected function registerServices()
     {
         $this->app->bind(History::class);
         $this->app->bind(CookieJar::class);

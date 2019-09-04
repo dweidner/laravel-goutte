@@ -1,1 +1,0 @@
-C:37:"PHPUnit\Runner\DefaultTestResultCache":292:{a:2:{s:7:"defects";a:0:{}s:5:"times";a:3:{s:65:"Weidner\Goutte\GoutteServiceProviderTest::has_registered_services";d:0.114;s:64:"Weidner\Goutte\GoutteServiceProviderTest::has_registered_aliases";d:0.004;s:71:"Weidner\Goutte\GoutteServiceProviderTest::has_registered_package_config";d:0.003;}}}

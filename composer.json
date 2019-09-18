@@ -1,6 +1,6 @@
 {
     "name": "weidner/goutte",
-    "description": "Laravel 5 package for Goutte, a simple PHP Web Scraper",
+    "description": "Laravel Facade for Goutte, a simple PHP Web Scraper",
     "license": "MIT",
     "keywords": [
       "weidner",

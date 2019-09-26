@@ -45,5 +45,8 @@
                 "Goutte": "Weidner\\Goutte\\GoutteFacade"
             }
         }
+    },
+    "scripts": {
+      "test": "phpunit"
     }
 }

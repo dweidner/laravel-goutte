@@ -115,7 +115,6 @@ class GoutteServiceProvider extends ServiceProvider
     protected function registerAliases()
     {
         $this->app->alias('goutte', GoutteClient::class);
-        $this->app->alias('goutte.client', GuzzleClient::class);
     }
 
     /**
@@ -127,7 +126,6 @@ class GoutteServiceProvider extends ServiceProvider
     {
         return [
             'goutte',
-            'goutte.client',
         ];
     }
 }

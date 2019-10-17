@@ -51,7 +51,7 @@ return [
         /*
          * Package Service Providers...
          */
-        Weidner\Goutte\GoutteServiceProvider::class, // [1]
+        Weidner\Goutte\GoutteServiceProvider::class, // [1] This will register the Package in the laravel echo system
 
         /*
          * Application Service Providers...
@@ -72,7 +72,7 @@ return [
 
         // ...
 
-        'Goutte' => Weidner\Goutte\GoutteFacade::class, // [2]
+        'Goutte' => Weidner\Goutte\GoutteFacade::class, // [2] It will register as an alias for the Goutte facade
         'Hash' => Illuminate\Support\Facades\Hash::class,
 
         // ...

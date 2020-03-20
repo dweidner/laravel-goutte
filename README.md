@@ -98,6 +98,8 @@ Route::get('/', function() {
 
 *TIP:* If you retrieve a "Class 'Goutte' not found"-Exception try to update the autoloader by running `composer dump-autoload` in your project root.
 
+*TIP:* You can use the package with [Lumen](https://lumen.laravel.com/) as well. Register the `GoutteServiceProvider` in `bootstrap/app.php` and provide the missing path to your configuration directory in your `AppServiceProvider` (ref [\#34](https://github.com/dweidner/laravel-goutte/issues/34/)).
+
 ## Configuration
 
 You can customize the default request options to apply to each request of the client. Copy the default configuration to your application directory first:

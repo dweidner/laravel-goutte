@@ -58,7 +58,7 @@ class GoutteServiceProvider extends ServiceProvider
      */
     protected function publishConfig($path, $group = 'config')
     {
-        $this->publishes([$path => config_path('goutte.php')], $group);
+        $this->publishes([$path => $this->app['path.config'] . '/goutte.php'], $group);
     }
 
     /**

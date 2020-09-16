@@ -115,10 +115,9 @@ Open the created file in the `config/goutte.php` and customize the configuration
 
 return [
     'client' => [
-        'allow_redirects' => false,
-        'cookies' => true,
+        'max_redirects' => 0,
     ],
 ];
 ```
 
-Have a look into the [Guzzle Documentation](http://docs.guzzlephp.org/en/stable/request-options.html) for a full list of available options.
+Have a look into the [Symfony Http Client Documentation](https://symfony.com/doc/current/http_client.html) for a full list of available options.

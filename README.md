@@ -126,5 +126,5 @@ Have a look into the [Symfony Http Client Documentation](https://symfony.com/doc
 
 | Release            | Supported Versions |
 |--------------------|--------------------|
-| Laraval Goutte 2.x | Laraval 8          |
-| Laraval Goutte 1.6 | Laravel 5/6/7      |
+| Laravel Goutte 2.x | Laravel 8          |
+| Laravel Goutte 1.6 | Laravel 5/6/7      |

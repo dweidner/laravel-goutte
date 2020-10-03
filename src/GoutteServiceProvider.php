@@ -3,10 +3,10 @@
 namespace Weidner\Goutte;
 
 use Goutte\Client as GoutteClient;
-use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Support\ServiceProvider;
 use Symfony\Component\BrowserKit\History;
 use Symfony\Component\BrowserKit\CookieJar;
+use Symfony\Component\HttpClient\HttpClient;
 
 class GoutteServiceProvider extends ServiceProvider
 {
@@ -81,27 +81,14 @@ class GoutteServiceProvider extends ServiceProvider
         $this->app->bind(History::class);
         $this->app->bind(CookieJar::class);
 
-        $this->app->singleton('goutte.client', function ($app) {
-            $config = $app->make('config');
-
-            $client = new GuzzleClient([
-                'base_url' => $config->get('goutte.base_url', null),
-                'defaults' => $config->get('goutte.client', [])
-            ]);
-
-            return $client;
-        });
-
         $this->app->singleton('goutte', function ($app) {
             $config = $app->make('config');
 
             $goutte = new GoutteClient(
-                $config->get('goutte.server', []),
+                HttpClient::create($config->get('goutte.client', [])),
                 $app->make(History::class),
                 $app->make(CookieJar::class)
             );
-
-            $goutte->setClient($app->make('goutte.client'));
 
             return $goutte;
         });

@@ -4,17 +4,16 @@ return [
 
     /*
      |-----------------------------------------------------------------------
-     | Guzzle Client Configuration
+     | Symfony Http Client Configuration
      |-----------------------------------------------------------------------
      |
      | A collection of default request options to apply to each request
-     | dispatched by the GuzzleHttp client.
+     | dispatched by the Symfony Http Client.
      |
-     | @see {@link http://docs.guzzlephp.org/en/stable/request-options.html}
+     | @see {@link https://symfony.com/doc/current/http_client.html}
      */
 
     'client' => [
-        'allow_redirects' => false,
-        'cookies' => true,
+        'max_redirects' => 0
     ],
 ];

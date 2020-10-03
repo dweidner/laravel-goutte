@@ -121,3 +121,10 @@ return [
 ```
 
 Have a look into the [Symfony Http Client Documentation](https://symfony.com/doc/current/http_client.html) for a full list of available options.
+
+## Version Constraint
+
+| Release            | Supported Versions |
+|--------------------|--------------------|
+| Laraval Goutte 2.x | Laraval 8          |
+| Laraval Goutte 1.6 | Laravel 5/6/7      |

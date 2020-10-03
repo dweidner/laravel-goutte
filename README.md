@@ -22,9 +22,9 @@ This will add the following lines to your `composer.json` and download the proje
     // ...
 
     "require": {
-        "php": ">=5.5.9",
-        "laravel/framework": "^5.5",
-        "weidner/goutte": "^1",
+        "php": "^7.2",
+        "laravel/framework": "^8",
+        "weidner/goutte": "^2",
         // ...
     },
 

@@ -3,9 +3,9 @@
     "description": "Laravel Facade for Goutte, a simple PHP Web Scraper",
     "license": "MIT",
     "keywords": [
-      "weidner",
-      "goutte",
-      "laravel"
+        "weidner",
+        "goutte",
+        "laravel"
     ],
     "homepage": "https://github.com/dweidner/laravel-goutte",
     "authors": [
@@ -16,8 +16,8 @@
         }
     ],
     "require": {
-        "php": "^7.3|^8.0",
-        "illuminate/support": "^8",
+        "php": "^8.0",
+        "illuminate/support": "^9.0",
         "fabpot/goutte": "^4.0"
     },
     "require-dev": {
@@ -29,9 +29,9 @@
         }
     },
     "autoload-dev": {
-      "psr-4": {
-        "Weidner\\Goutte\\": "tests/"
-      }
+        "psr-4": {
+            "Weidner\\Goutte\\": "tests/"
+        }
     },
     "extra": {
         "branch-alias": {
@@ -47,6 +47,6 @@
         }
     },
     "scripts": {
-      "test": "phpunit"
+        "test": "phpunit"
     }
 }

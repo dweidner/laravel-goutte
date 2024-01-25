@@ -2,6 +2,12 @@
 
 This repository implements a simple [ServiceProvider](https://laravel.com/docs/master/providers) that makes a singleton instance of the Goutte client easily accessible via a [Facade](https://laravel.com/docs/master/facades) in [Laravel](http://laravel.com). See [@FriendsOfPHP/Goutte](https://github.com/FriendsOfPHP/Goutte) for more information about the PHP web scraper and its interfaces.
 
+> [!WARNING]  
+> Goutte is deprecated and suggests to use the [`HttpBrowser` class](
+https://symfony.com/doc/current/components/browser_kit.html#making-external-http-requests)
+from the Symfony [BrowserKit](https://symfony.com/browser-kit) component as a direct repacement. This package was developed as a simple  integration for Laravel applications and thus will be deprecated as well.
+
+
 ## Installation using [Composer](https://getcomposer.org/)
 
 In your terminal application move to the root directory of your laravel project using the `cd` command and require the project as a dependency using composer.
